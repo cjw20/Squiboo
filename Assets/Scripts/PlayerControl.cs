@@ -9,11 +9,10 @@ public class PlayerControl : MonoBehaviour
 
     public bool rotating;
     public float rotateSpeed;
-    public float duration;
-
-    public Quaternion target;
-    public Vector3 oldRotation;
-    public Vector3 targetAngle;
+    
+    Quaternion target;
+    Vector3 oldRotation;
+    Vector3 targetAngle;
     float t;
 
     void Awake()
@@ -28,10 +27,9 @@ public class PlayerControl : MonoBehaviour
         if (rotating)
         {
             t += (Time.deltaTime * rotateSpeed); 
-            //boxTransform.rotation = Quaternion.RotateTowards(boxTransform.rotation, target, 3);
             boxTransform.rotation = Quaternion.Lerp(boxTransform.rotation, target, t);
             
-            if(t >= 1   )
+            if(t >= 1)
             {
                 rotating = false;
                 t = 0;
