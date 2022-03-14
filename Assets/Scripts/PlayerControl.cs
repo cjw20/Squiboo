@@ -42,7 +42,7 @@ public class PlayerControl : MonoBehaviour
         if (rotating)
             return;
         oldRotation = boxTransform.rotation.eulerAngles;
-        targetAngle = oldRotation + new Vector3(0, 0, 90);
+        targetAngle = oldRotation + new Vector3(0, 0, -90);
         target = Quaternion.Euler(targetAngle);
         rotating = true;
         
@@ -53,7 +53,7 @@ public class PlayerControl : MonoBehaviour
         if (rotating)
             return;
         oldRotation = boxTransform.rotation.eulerAngles;
-        targetAngle = oldRotation + new Vector3(0, 0, -90);
+        targetAngle = oldRotation + new Vector3(0, 0, 90);
         target = Quaternion.Euler(targetAngle);
         rotating = true;
         
