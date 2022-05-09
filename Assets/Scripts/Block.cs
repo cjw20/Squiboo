@@ -14,18 +14,17 @@ public class Block : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         BlockColor collisionColor = collision.gameObject.GetComponent<Block>().blockColor;
-
-        if(collisionColor == blockColor)
-        {
-           //attach
-        }
-        else if(collisionColor == BlockColor.white)
+        if(blockColor == BlockColor.white)
         {
             //clear
         }
+        else if(collisionColor == blockColor)
+        {
+           //attach
+        }      
 
         else
         {
