@@ -9,6 +9,7 @@ public class PlayerControl : MonoBehaviour
 
     public bool rotating;
     public float rotateSpeed;
+    float defaultRotateSpeed;
     
     Quaternion target;
     Vector3 oldRotation;
@@ -18,6 +19,7 @@ public class PlayerControl : MonoBehaviour
     void Awake()
     {
         boxTransform = playerBox.GetComponent<Transform>();
+        defaultRotateSpeed = rotateSpeed;
         t = 0;
     }
 
@@ -33,6 +35,7 @@ public class PlayerControl : MonoBehaviour
             {
                 rotating = false;
                 t = 0;
+                rotateSpeed = defaultRotateSpeed;
             }    
         }
     }
@@ -40,7 +43,11 @@ public class PlayerControl : MonoBehaviour
     public void RotateRight()
     {
         if (rotating)
+        {
+            rotateSpeed = rotateSpeed * 3; //increases rotate to smoothen gameplay
             return;
+        }
+            
         oldRotation = boxTransform.rotation.eulerAngles;
         targetAngle = oldRotation + new Vector3(0, 0, -90);
         target = Quaternion.Euler(targetAngle);
@@ -51,7 +58,10 @@ public class PlayerControl : MonoBehaviour
     public void RotateLeft()
     {
         if (rotating)
+        {
+            rotateSpeed = rotateSpeed * 3;
             return;
+        }
         oldRotation = boxTransform.rotation.eulerAngles;
         targetAngle = oldRotation + new Vector3(0, 0, 90);
         target = Quaternion.Euler(targetAngle);

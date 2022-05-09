@@ -31,5 +31,7 @@ public class DifficultyScaler : MonoBehaviour
                 spawner.blockSpeed += speedAdjustment;
             }            
         }
+
+        GameControl.control.UpdateTime((int)timeElapsed);
     }
 }

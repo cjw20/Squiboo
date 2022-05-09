@@ -23,11 +23,10 @@ public class Block : MonoBehaviour
         else if(contactBase.color == blockColor)
         {
             contactBase.AddSize(CalculateScale());
-        }      
-
+        }     
         else
         {
-            //lose life
+            GameControl.control.UpdateLifes(-1);
         }
 
         Destroy(this.gameObject); //removes block after collision 
