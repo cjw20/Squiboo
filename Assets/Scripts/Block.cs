@@ -30,7 +30,7 @@ public class Block : MonoBehaviour
             //lose life
         }
 
-        Destroy(this); //removes block after collision 
+        Destroy(this.gameObject); //removes block after collision 
     }
 
     Vector2 CalculateScale()
