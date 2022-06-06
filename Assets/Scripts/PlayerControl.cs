@@ -44,7 +44,7 @@ public class PlayerControl : MonoBehaviour
     {
         if (rotating)
         {
-            rotateSpeed = rotateSpeed * 3; //increases rotate to smoothen gameplay
+            //rotateSpeed = rotateSpeed * 3; //increases rotate to smoothen gameplay
             return;
         }
             
@@ -59,7 +59,7 @@ public class PlayerControl : MonoBehaviour
     {
         if (rotating)
         {
-            rotateSpeed = rotateSpeed * 3;
+            //rotateSpeed = rotateSpeed * 3;
             return;
         }
         oldRotation = boxTransform.rotation.eulerAngles;

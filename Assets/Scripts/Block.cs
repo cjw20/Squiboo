@@ -26,7 +26,7 @@ public class Block : MonoBehaviour
         }     
         else
         {
-            GameControl.control.UpdateLifes(-1);
+            GameControl.control.UpdateLives(-1);
         }
 
         Destroy(this.gameObject); //removes block after collision 
